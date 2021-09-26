@@ -1,0 +1,35 @@
+
+Step 1. Data Preperation
+	Details: Process the Ukraine survey to be usable by network scale-up models
+	(a) Ukraine_Preparation.R
+		Reads in the Ukraine .xlsx file, removes missing data and unused columns, and saves the data in three files:
+		1. Ukraine_y.csv: Aggregated relational data responses
+		2. Ukraine_x_cov.csv: Respondent covariate information (including intercept term)
+		3. resplevel_Ukraine_Z_cov.csv: Respondent-level level of respect information
+		Additionally, this file generates the plots in Figure 1 of the manuscript
+		
+Step 2. Fit Ukraine Data
+	Details: Fit the data using the Zheng et al. (2006) overdispersed and our proposed correlated NSUM models
+	(a) Ukraine_overdispersed_analysis.R
+		Fits the overdispersed NSUM model and saves relevant output. To be run using a multi-core server cluster, although can be easily adapted to run locally
+	(b) Ukraine_correlated_analysis.R
+		Fits the correlated NSUM model and saves relevant output. To be run using a multi-core server cluster, although can be easily adapted to run locally
+		
+Step 3. Analyze Results
+	Details: Analyze the output from the fitted models and generate all result plots and tables in the manuscript and supplementary material
+	(a) Ukraine_Results.R
+		Reads in results and generates plots and tables
+		
+Step 4. Simulation and Numerical Study
+	Details: Implements the simulation study in Section 6 and Supplementary Section 4
+	(a) Simulation_analysis.R
+		Simulates data and fits one of the assumed models in Section 6
+	(b) Simulation_Results.R
+		Analyzes the simulation results and creates the plots for Figure 5 
+	(c) Misspecified_covariate.R
+		Performs the numerical analysis for the misspecified model with no covariates
+	(d) Misspecified_correlation.R
+		Performs the numerical analysis for the misspecified model with no correlation
+		
+		
+		
